@@ -1,0 +1,46 @@
+<p-toast key="bc" position="top-right" [breakpoints]="{ '768px': { width: '100%', right: '0', left: '0' } }"></p-toast>
+<div>
+
+
+
+    <div class="grid p-fluid">
+
+        <div class="col-3">
+            <button pButton routerLink="/usuarios" icon="pi pi-backward"></button>
+        </div>
+    </div>
+
+    <div class="grid p-fluid">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <h2>Cadastrar novo usuario</h2>
+            <span class="p-float-label">
+                <input id="float-input" name="nome" type="text" pInputText [(ngModel)]="usuario.nome">
+                <label for="float-input">Nome</label>
+            </span>
+        </div>
+    </div>
+    <div class="grid p-fluid" style="padding-top: 10px;">
+        <div class="col-2"></div>
+        <div class="col-4">
+            <span class="p-float-label">
+                <p-inputMask id="float-input" [(ngModel)]="usuario.telefone" mask="(99) 99999-9999"
+                    placeholder="(99) 99999-9999"></p-inputMask>
+                <label for="float-input">Telefone</label>
+            </span>
+        </div>
+        <div class="col-4">
+            <span class="p-float-label">
+                <input id="float-input" type="email" pInputText [(ngModel)]="usuario.email">
+                <label for="float-input">Email</label>
+            </span>
+        </div>
+    </div>
+    <div class="grid p-fluid">
+        <div class="col-8"></div>
+        <div class="col-2">
+            <button pButton type="button" label="Salvar" style="margin-top: 100px;"
+                (click)="salvarEditar(usuario.id, usuario)"></button>
+        </div>
+    </div>
+</div>

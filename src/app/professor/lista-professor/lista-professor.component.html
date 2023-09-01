@@ -1,0 +1,29 @@
+<div>
+    <p-table [value]="professor" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nome</th>
+                <th>Formação</th>
+                <th>Idade</th>
+                <th>Nacionalidade</th>
+                <th>Ação</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-professor>
+            <tr>
+                <td>{{professor.nome}}</td>
+                <td>{{professor.formacao}}</td>
+                <td>{{professor.idade}}</td>
+                <td>{{professor.nacionalidade}}</td>
+                <td>
+                    <p-checkbox name="groupname" value="val1"></p-checkbox>
+                </td>
+            </tr>
+
+        </ng-template>
+
+    </p-table>
+</div>
+<div style="display: flex; justify-content: end; padding-top: 100px;">
+    <button pButton type="button" label="Click"></button>
+</div>

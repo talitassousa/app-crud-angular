@@ -1,0 +1,64 @@
+<p-toast key="bc" position="top-right" [breakpoints]="{ '768px': { width: '100%', right: '0', left: '0' } }"></p-toast>
+
+<!-- # Criando o botão de cadastrar usuario -->
+<div class="grid p-fluid">
+    <div class="col-4">
+    </div>
+    <div class="col-6">
+    </div>
+    <div class="col-2">
+        <button pButton routerLink="/usuarios/cadastro" icon="pi pi-plus" label="Cadastrar"></button>
+    </div>
+</div>
+
+<!-- # Criando o Input de pesquisa e a logo da lupa -->
+<div class="grid p-fluid">
+    <div class="col-4">
+        <input pInputText type="text" #searchInput (input)="dt1.filterGlobal(searchInput.value, 'contains')" placeholder="Pesquisar usuário">
+    </div>
+    <div class="col-3">
+        <button pButton icon="pi pi-search"></button>
+    </div>
+</div>
+
+<!-- # Tabela  -->
+<div class="grid-12 p-fluid">
+    <p-table #dt1 [value]="usuarios" [tableStyle]="{ 'min-width': '60rem' }" [globalFilterFields]="['nome']">
+
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-usuario>
+            <tr>
+
+                <td>
+                    {{
+                    usuario.nome
+                    }}
+                </td>
+                <td>
+                    {{
+                    usuario.telefone
+                    }}
+                </td>
+                <td>
+                    {{
+                    usuario.email
+                    }}
+                </td>
+                <td>
+                    <button pButton type="button" (click)="excluirUsuario(usuario.id)" icon="pi pi-trash"
+                        class="p-button-danger mr-2"></button>
+                    <button pButton type="button" [routerLink]="['/usuarios', usuario.id]"
+                        icon="pi pi-user-edit"></button>
+                </td>
+            </tr>
+        </ng-template>
+
+    </p-table>
+</div>

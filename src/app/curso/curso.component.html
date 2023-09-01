@@ -1,0 +1,45 @@
+<div class="grid p-fluid">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <h2>Cadastrar Curso</h2>
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText>
+            <label for="float-input">Curso</label>
+        </span>
+    </div>
+</div>
+<div class="grid p-fluid" style="padding-top: 15px;">
+    <div class="col-2"></div>
+    <div class="col-4">
+        <span class="p-float-label">
+            <input id="float-input" type="text" pInputText>
+            <label for="float-input">Tempo de duração</label>
+        </span>
+    </div>
+</div>
+
+<div class="grid p fluid">
+    <div class="col-2"></div>
+    <div>
+        <h4>Dias da semana</h4>
+        <div class="field-radiobutton">
+            <p-radioButton name="city" value="Chicago" [(ngModel)]="binding" inputId="city1"></p-radioButton>
+            <label for="city1">Segunda e quarta</label>
+        </div>
+        <div class="field-radiobutton">
+            <p-radioButton name="city" value="Los Angeles" [(ngModel)]="binding" inputId="city2"></p-radioButton>
+            <label for="city2">Terça e quinta</label>
+        </div>
+        <div class="field-radiobutton">
+            <p-radioButton name="city" value="New York" [(ngModel)]="binding" inputId="city3"></p-radioButton>
+            <label for="city3">Quarta e sexta</label>
+        </div>
+    </div>
+
+</div>
+<div class="grid p-fluid">
+    <div class="col-7"></div>
+    <div class="col-3">
+        <button icon="pi pi-user " pButton routerLink="/professor" style="margin: 50px;" label="Escolher professor">
+        </button>
+    </div>
