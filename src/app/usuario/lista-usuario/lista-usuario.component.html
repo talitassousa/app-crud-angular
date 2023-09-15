@@ -1,23 +1,16 @@
 <p-toast key="bc" position="top-right" [breakpoints]="{ '768px': { width: '100%', right: '0', left: '0' } }"></p-toast>
 
-<!-- # Criando o botão de cadastrar usuario -->
-<div class="grid p-fluid">
-    <div class="col-4">
-    </div>
-    <div class="col-6">
-    </div>
-    <div class="col-2">
-        <button pButton routerLink="/usuarios/cadastro" icon="pi pi-plus" label="Cadastrar"></button>
-    </div>
-</div>
 
 <!-- # Criando o Input de pesquisa e a logo da lupa -->
 <div class="grid p-fluid">
     <div class="col-4">
         <input pInputText type="text" #searchInput (input)="dt1.filterGlobal(searchInput.value, 'contains')" placeholder="Pesquisar usuário">
     </div>
-    <div class="col-3">
+    <div class="col-6 ">
         <button pButton icon="pi pi-search"></button>
+    </div>
+    <div class="col-2 ">
+        <button pButton routerLink="/usuarios/cadastro" icon="pi pi-plus" label="Cadastrar"></button>
     </div>
 </div>
 

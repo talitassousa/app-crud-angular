@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+body {
+    background-color: rgb(236, 235, 235);
     font-family: sans-serif;
 }
 
@@ -12,3 +13,18 @@ body{
     margin-bottom: 2rem;
     justify-content: center !important;
 }
+
+/* .button justify-content-end col-2 {
+    color: red !important;
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.p-button-label {
+    color: red !important;
+    background-color: rgb(173, 43, 134) !important;
+} */
+
+/* .p-button.p-element.p-button.p-component {
+    color: red !important;
+} */

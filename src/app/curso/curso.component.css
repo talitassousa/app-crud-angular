@@ -1,0 +1,5 @@
+.tituloCurso{
+    color: rgb(117, 116, 116);
+    display: flex;
+    justify-content: center;
+}

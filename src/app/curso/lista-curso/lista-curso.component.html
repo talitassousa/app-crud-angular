@@ -1,0 +1,42 @@
+<p-toast key="bc" position="top-right" [breakpoints]="{ '768px': { width: '100%', right: '0', left: '0' } }"></p-toast>
+
+<h2 class="tituloListaCurso">Lista de Cursos</h2>
+<div class="flex flex-column ">
+    <p-table [value]="cursos">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Cursos</th>
+                <th>Tempo</th>
+                <th>Dias</th>
+                <th>Ações</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-curso>
+            <tr>
+                <td>
+                    {{
+                    curso.curso
+                    }}
+                </td>
+                <td>
+                    {{
+                    curso.tempo
+                    }}
+                </td>
+                <td>
+                    {{
+                    curso.dias
+                    }}
+                </td>
+                <td>
+                    <button pButton type="button" (click)="excluirCurso(curso.id)" icon="pi pi-trash"
+                        class="p-button-danger mr-2"></button>
+                    <button pButton type="button" [routerLink]="['/cursos', curso.id]" icon="pi pi-user-edit"></button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <div>
+
+    </div>
+</div>

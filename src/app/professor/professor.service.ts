@@ -20,7 +20,25 @@ export class ProfessorService {
     this.url = 'http://localhost:8080/v1/professor'
   }
 
-  pesquisarTodos(): Observable<Professor[]> {
+  
+
+  adicionarProfessor(professor: Professor): Observable<Professor> {
+    return this.http.post<Professor>(`${this.url}`, professor)
+  }
+
+  editarProfessor(id: number, professor: Professor): Observable<Professor> {
+    return this.http.put<Professor>(`${this.url}/${id}`, professor)
+  }
+
+  pesquisarTodosProfessores(): Observable<Professor[]> {
     return this.http.get<Professor[]>(`${this.url}`)
+  }
+  
+  pesquisarProfessorPorId(id: number): Observable<Professor> {
+    return this.http.get<Professor>(`${this.url}/${id}`)
+  }
+
+  excluirProfessor(id: number): Observable<Professor> {
+    return this.http.delete<Professor>(`${this.url}/${id}`)
   }
 }

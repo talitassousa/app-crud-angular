@@ -4,8 +4,6 @@ import { Usuario } from 'src/app/models/usuario';
 import { UsuarioService } from '../usuario.service';
 
 
-
-
 @Component({
   selector: 'app-lista-usuario',
   templateUrl: './lista-usuario.component.html',

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../usuario.service';
-import { Usuario } from 'src/app/models/usuario';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { Usuario } from 'src/app/models/usuario';
+import { UsuarioService } from '../usuario.service';
 
 @Component({
   selector: 'app-usuario',
@@ -28,8 +28,9 @@ export class UsuarioComponent implements OnInit {
     }
   }
 
-  salvarEditar(id: number, usuario: Usuario) {
+  salvarEditar(usuario: Usuario) {
     if (this.route.snapshot.paramMap.get('id')) {
+      let id = Number(this.route.snapshot.paramMap.get('id'))
       this.editar(id, usuario)
     } else {
       this.salvar(usuario)

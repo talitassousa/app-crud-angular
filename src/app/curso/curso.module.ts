@@ -1,28 +1,32 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputMaskModule } from 'primeng/inputmask';
 import { InputTextModule } from 'primeng/inputtext';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
 import { CursoRoutingModule } from './curso-routing.module';
 import { CursoComponent } from './curso.component';
-import { ButtonModule } from 'primeng/button';
-
-
-
+import { ListaCursoComponent } from './lista-curso/lista-curso.component';
 
 
 @NgModule({
-  declarations: [CursoComponent],
+  declarations: [ListaCursoComponent, CursoComponent],
   imports: [
     CommonModule,
     CursoRoutingModule,
+    TableModule,
     RadioButtonModule,
     FormsModule,
-    ReactiveFormsModule,
+    ButtonModule,
     InputTextModule,
-    ButtonModule
-
+    InputMaskModule,
+    ToastModule,
+    DropdownModule
   ]
+
 })
 export class CursoModule { }

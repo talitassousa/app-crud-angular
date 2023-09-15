@@ -19,7 +19,7 @@ const routes: Routes = [
     loadChildren: () => CursoModule
   },
   {
-    path: 'professor',
+    path: 'professores',
     loadChildren: () => ProfessorModule
   }
 ];

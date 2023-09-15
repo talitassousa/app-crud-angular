@@ -1,45 +1,62 @@
+<p-toast key="bc" position="top-right" [breakpoints]="{ '768px': { width: '100%', right: '0', left: '0' } }"></p-toast>
+
 <div class="grid p-fluid">
     <div class="col-2"></div>
     <div class="col-8">
-        <h2>Cadastrar Curso</h2>
+        <h2 class="tituloCurso">Cadastrar Curso</h2>
         <span class="p-float-label">
-            <input id="float-input" type="text" pInputText>
-            <label for="float-input">Curso</label>
+            <input name="descricao" type="text" pInputText [(ngModel)]="curso.curso">
+            <label for="descricao">Curso</label>
         </span>
     </div>
 </div>
-<div class="grid p-fluid" style="padding-top: 15px;">
+<div class="grid p-fluid mt-2">
     <div class="col-2"></div>
     <div class="col-4">
         <span class="p-float-label">
-            <input id="float-input" type="text" pInputText>
-            <label for="float-input">Tempo de duração</label>
+            <input name="tempo" type="text" pInputText [(ngModel)]="curso.tempo">
+            <label for="tempo">Tempo de duração</label>
         </span>
     </div>
 </div>
 
-<div class="grid p fluid">
+<div class="grid p-fluid">
     <div class="col-2"></div>
     <div>
         <h4>Dias da semana</h4>
         <div class="field-radiobutton">
-            <p-radioButton name="city" value="Chicago" [(ngModel)]="binding" inputId="city1"></p-radioButton>
-            <label for="city1">Segunda e quarta</label>
+            <p-radioButton name="diasEnum" value="SEGUNDA_QUARTA" [(ngModel)]="curso.dias"
+                inputId="SEGUNDA_QUARTA"></p-radioButton>
+            <label for="SEGUNDA_QUARTA">Segunda e quarta</label>
         </div>
         <div class="field-radiobutton">
-            <p-radioButton name="city" value="Los Angeles" [(ngModel)]="binding" inputId="city2"></p-radioButton>
-            <label for="city2">Terça e quinta</label>
+            <p-radioButton name="diasEnum" value="TERCA_QUINTA" [(ngModel)]="curso.dias"
+                inputId="TERCA_QUINTA,"></p-radioButton>
+            <label for="TERCA_QUINTA,">Terça e quinta</label>
         </div>
         <div class="field-radiobutton">
-            <p-radioButton name="city" value="New York" [(ngModel)]="binding" inputId="city3"></p-radioButton>
-            <label for="city3">Quarta e sexta</label>
+            <p-radioButton name="diasEnum" value="QUARTA_SEXTA" [(ngModel)]="curso.dias"
+                inputId="QUARTA_SEXTA"></p-radioButton>
+            <label for="QUARTA_SEXTA">Quarta e sexta</label>
         </div>
     </div>
 
 </div>
-<div class="grid p-fluid">
-    <div class="col-7"></div>
-    <div class="col-3">
-        <button icon="pi pi-user " pButton routerLink="/professor" style="margin: 50px;" label="Escolher professor">
-        </button>
+<div class="grid p-fluid mt-2">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <form>
+            <p-dropdown name="professor" [options]="professores" [(ngModel)]="professor.nome" optionLabel="nome"
+                #professor.nome="ngModel" optionValue="nome" placeholder="Selecione o professor"></p-dropdown>
+        </form>
     </div>
+
+</div>
+
+<div class="grid p-fluid">
+    <div class="col-8"></div>
+    <div class="col-2">
+        <button pButton type="button" label="Salvar" style="margin-top: 100px;"
+            (click)="salvarEditar(curso.id, curso)"></button>
+    </div>
+</div>
